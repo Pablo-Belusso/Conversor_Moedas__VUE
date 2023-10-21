@@ -1,5 +1,7 @@
 <template>
+    <div class="conversor">
 
+    </div>
 </template>
 
 <script>
