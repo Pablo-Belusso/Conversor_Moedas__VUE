@@ -8,7 +8,8 @@
 <script>
 
     export default {
-        
+        name: "Conversor",
+        props: ["moedaA", "moedaB"]
     }
 
 </script>
