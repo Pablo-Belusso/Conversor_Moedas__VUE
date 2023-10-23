@@ -15,13 +15,13 @@ module.exports = {
     rules: {
       // Outras regras...
     },
-    overrides: [
+/*     overrides: [
       {
         files: ['*.vue'],
         rules: {
           'vue/multi-word-component-names': ['error', 'always'],
         },
       },
-    ],
+    ], */
   };
   
