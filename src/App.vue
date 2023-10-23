@@ -1,7 +1,7 @@
 <template>
   <!-- eslint-disable vue/multi-word-component-names -->
   <div id="app">
-   <Conversor/>
+   <Conversor moeda-a="USD" moeda-b="BRL"/>
   </div>
   <!-- eslint-enable vue/multi-word-component-names -->
 </template>
