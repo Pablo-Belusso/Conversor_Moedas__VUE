@@ -1,17 +1,19 @@
 <template>
-  
-  <div id="app"></div>
- 
+  <!-- eslint-disable vue/multi-word-component-names -->
+  <div id="app">
+   <Conversor/>
+  </div>
+  <!-- eslint-enable vue/multi-word-component-names -->
 </template>
 
 <script>
 
-  import Conversor from "./components/Conversor.vue"
+  import Conversor from "./components/Conversor.vue";
 
   export default {
     name: 'App',
     components: {
-      
+      Conversor
     }
   }
 </script>
