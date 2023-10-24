@@ -15,13 +15,6 @@ module.exports = {
     rules: {
       // Outras regras...
     },
-/*     overrides: [
-      {
-        files: ['*.vue'],
-        rules: {
-          'vue/multi-word-component-names': ['error', 'always'],
-        },
-      },
-    ], */
+
   };
   
