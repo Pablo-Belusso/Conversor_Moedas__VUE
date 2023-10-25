@@ -14,14 +14,20 @@
     export default {
     name: 'Conversor',
     props: ["moedaA", "moedaB"],
-    data() {
-        return {
-        moedaA_value: "",
-        moedaB_value: 4
-        };
-    }
-    }
+        data() {
+            return {
+            moedaA_value: "",
+            moedaB_value: 0
+            };
+        },
+        methods: {
 
+            converter(){
+    
+        }
+}
+    };
+    
 </script>
 
 
