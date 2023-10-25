@@ -17,7 +17,7 @@
     data() {
         return {
         moedaA_value: "",
-        moedaB_value: 0
+        moedaB_value: 4
         };
     }
     }
