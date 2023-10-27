@@ -23,6 +23,7 @@
         methods: {
 
             converter(){
+                let de_para = this.moedaA + "_" + this.moedaB
 
                 let url = "https://free.currencyconverterapi.com/api/v5/convert?q="
                  + de_para
