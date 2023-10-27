@@ -23,7 +23,7 @@
         methods: {
 
             converter(){
-                let url = "https://free.currencyconverterapi.com/api/v5/convert?q=USD_BRL&company=y";
+                let url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_ReJlPfM4EHHyqVcvmXEwSNq7JTxiFWxUzrheGG6e";
         }
 }
     };
