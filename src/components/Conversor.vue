@@ -23,7 +23,7 @@
         methods: {
 
             converter(){
-    
+                let url = "https://free.currencyconverterapi.com/api/v5/convert?q=USD_BRL&company=y";
         }
 }
     };
