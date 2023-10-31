@@ -12,8 +12,8 @@
 <script>
 /* eslint-disable */
     export default {
-    name: 'Conversor',
-    props: ["moedaA", "moedaB"],
+        name: 'Conversor',
+        props: ["moedaA", "moedaB"],
         data() {
             return {
             moedaA_value: "",
@@ -23,13 +23,18 @@
         methods: {
 
             converter(){
-                let de_para = this.moedaA + "_" + this.moedaB
+                let de_para = this.moedaA + "_" + this.moedaB;
 
                 let url = "https://free.currencyconverterapi.com/api/v5/convert?q="
                  + de_para
-                 + "L&company=y"
+                 + "L&company=y";
+            
+            fetch (url).then(res=>{return res.json})
+                       .then(json=>{
+                            let cotacao = json[de_para].val;
+                       })
+            }
         }
-}
     };
     
 </script>
