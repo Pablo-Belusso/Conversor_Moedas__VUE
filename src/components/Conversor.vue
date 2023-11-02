@@ -27,18 +27,24 @@
 
                 let url = "https://api.apilayer.com/exchangerates_data/latest";
             
-            fetch (url)
-                .then((res) => res.json())
+                fetch (url, {
+                    headers: {
+                        // Substitua 'YOUR_API_KEY' pela sua chave de API
+                        'Api-Key': 'd468e25f57a2ef2a05d27ee3919375c9'
+                    }
+                }) 
+            
+                    .then((res) => res.json())
 
-                .then((json)=>{
-                            console.log(json);
-                            let cotacao = json[de_para].val;
-                            this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
-                       })
+                    .then((json)=>{
+                                console.log(json);
+                                let cotacao = json[de_para].val;
+                                this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
+                        })
 
-                .catch((error) => {
-                    console.error("Erro ao buscar taxas de câmbio: ", error);
-                });
+                    .catch((error) => {
+                        console.error("Erro ao buscar taxas de câmbio: ", error);
+                    });
                             
                        
             }
