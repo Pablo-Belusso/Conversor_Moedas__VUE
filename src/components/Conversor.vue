@@ -23,23 +23,30 @@
         methods: {
 
             converter() {
-                
                 let de_para = this.moedaA + "_" + this.moedaB;
+                
+                // Verifique se this.moedaA_value é um número válido
+                const moedaA_value = parseFloat(this.moedaA_value);
+                
+                if (isNaN(moedaA_value)) {
+                    // Mostra uma mensagem de erro ou lida com o valor inválido
+                    console.error("O valor inserido não é válido.");
+                } else {
+                    let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9";
 
-                let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9";
-
-                fetch(url)
+                    fetch(url)
                     .then((res) => res.json())
                     .then((json) => {
-                    console.log(json);
-                    let cotacao = json.rates[de_para];
-                    this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
+                        console.log(json);
+                        let cotacao = json.rates[de_para];
+                        this.moedaB_value = (cotacao * moedaA_value).toFixed(2);
                     })
                     .catch((error) => {
-                    console.error("Erro ao buscar taxas de câmbio: ", error);
+                        console.error("Erro ao buscar taxas de câmbio: ", error);
                     });
-
+                }
             }
+
 
 
         }
