@@ -45,5 +45,10 @@
 
 
 <style scoped>
+    .conversor{
+        padding: 20px;
+        max-width: 300px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
 
 </style>
