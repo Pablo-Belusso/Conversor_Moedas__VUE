@@ -22,32 +22,24 @@
         },
         methods: {
 
-            converter(){
+            converter() {
                 let de_para = this.moedaA + "_" + this.moedaB;
 
-                let url = "https://api.apilayer.com/exchangerates_data/latest";
-            
-                fetch (url, {
-                    headers: {
-                        // Substitua 'YOUR_API_KEY' pela sua chave de API
-                        'Api-Key': 'd468e25f57a2ef2a05d27ee3919375c9'
-                    }
-                }) 
-            
+                let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9";
+
+                fetch(url)
                     .then((res) => res.json())
-
-                    .then((json)=>{
-                                console.log(json);
-                                let cotacao = json[de_para].val;
-                                this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
-                        })
-
+                    .then((json) => {
+                    console.log(json);
+                    let cotacao = json.rates[de_para];
+                    this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
+                    })
                     .catch((error) => {
-                        console.error("Erro ao buscar taxas de câmbio: ", error);
+                    console.error("Erro ao buscar taxas de câmbio: ", error);
                     });
-                            
-                       
             }
+
+
         }
     };
     
