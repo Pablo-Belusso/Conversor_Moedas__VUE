@@ -25,18 +25,22 @@
             converter(){
                 let de_para = this.moedaA + "_" + this.moedaB;
 
-                let url = "https://free.currencyconverterapi.com/api/v5/convert?q="
-                 + de_para
-                 + "L&company=y";
+                let url = "https://api.apilayer.com/exchangerates_data/latest";
             
-            fetch (url).then(res => {
-                                return res.json();
-                            })
-                       .then(json=>{
+            fetch (url)
+                .then((res) => res.json())
+
+                .then((json)=>{
                             console.log(json);
                             let cotacao = json[de_para].val;
                             this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
                        })
+
+                .catch((error) => {
+                    console.error("Erro ao buscar taxas de câmbio: ", error);
+                });
+                            
+                       
             }
         }
     };
