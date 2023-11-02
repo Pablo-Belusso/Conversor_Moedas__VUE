@@ -32,7 +32,7 @@
                     // Mostra uma mensagem de erro ou lida com o valor inválido
                     console.error("O valor inserido não é válido.");
                 } else {
-                    let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9";
+                    let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9&symbols=USD,AUD,CAD,PLN,MXN";
 
                     fetch(url)
                     .then((res) => res.json())
