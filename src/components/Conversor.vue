@@ -31,6 +31,7 @@
             
             fetch (url).then(res=>{return res.json})
                        .then(json=>{
+                            console.log(json);
                             let cotacao = json[de_para].val;
                             this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
                        })
