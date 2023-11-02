@@ -23,6 +23,7 @@
         methods: {
 
             converter() {
+                
                 let de_para = this.moedaA + "_" + this.moedaB;
 
                 let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9";
@@ -37,6 +38,7 @@
                     .catch((error) => {
                     console.error("Erro ao buscar taxas de câmbio: ", error);
                     });
+
             }
 
 
