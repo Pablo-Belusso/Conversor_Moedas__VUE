@@ -23,7 +23,7 @@
             converter() {
                 let de_para = this.moedaA + "_" + this.moedaB;
 
-                let url = `https://api.apilayer.com/exchangerates_data/latest`;
+                let url = "http://localhost:3000/api/exchangerates_data/latest";
 
                 fetch(url, {
                     headers: {
