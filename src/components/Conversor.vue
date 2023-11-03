@@ -1,13 +1,11 @@
 <template>
-    <!-- eslint-disable --> 
     <div class="conversor">
-        <h2> {{ moedaA }} Para {{ moedaB }}</h2>
-        <input type="text" v-model="moedaA_value" v-bind:placeholder="moedaA">
-        <input type="button" value="Converter" v-on:click="converter">
-        <h2>{{ moedaB_value }}</h2>
+      <h2>{{ moedaA }} Para {{ moedaB }}</h2>
+      <input type="text" v-model="moedaA_value" v-bind:placeholder="moedaA">
+      <input type="button" value="Converter" v-on:click="converter">
+      <h2>{{ moedaB_value }}</h2>
     </div>
-
-</template>
+  </template>
 
 <script>
 /* eslint-disable */
@@ -24,34 +22,31 @@
 
             converter() {
                 let de_para = this.moedaA + "_" + this.moedaB;
-                
-                // Verifique se this.moedaA_value é um número válido
-                const moedaA_value = parseFloat(this.moedaA_value);
-                
-                if (isNaN(moedaA_value)) {
-                    // Mostra uma mensagem de erro ou lida com o valor inválido
-                    console.error("O valor inserido não é válido.");
-                } else {
-                    let url = "http://api.exchangeratesapi.io/v1/latest?access_key=d468e25f57a2ef2a05d27ee3919375c9&symbols=USD,AUD,CAD,PLN,MXN";
 
-                    fetch(url)
-                    .then((res) => res.json())
-                    .then((json) => {
-                        console.log(json);
-                        let cotacao = json.rates[de_para];
-                        this.moedaB_value = (cotacao * moedaA_value).toFixed(2);
-                    })
-                    .catch((error) => {
-                        console.error("Erro ao buscar taxas de câmbio: ", error);
-                    });
-                }
+                let url = `https://api.apilayer.com/exchangerates_data/latest`;
+
+                fetch(url, {
+                    headers: {
+                    'Api-Key': 'd468e25f57a2ef2a05d27ee3919375c9' // Substitua com sua chave de API da ExchangeRate-API
+                    }
+                })
+
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    let cotacao = data.rates[de_para];
+                    if (cotacao !== undefined) {
+                    this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2);
+                    } else {
+                    console.error("Taxa de câmbio não encontrada para a conversão especificada.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Erro ao buscar taxas de câmbio: ", error);
+                });
             }
-
-
-
         }
     };
-    
 </script>
 
 
