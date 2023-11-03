@@ -1,5 +1,7 @@
-import express from 'express';
-import fetch from 'node-fetch';
+require = require("esm")(module);
+
+const express = require('express').default;
+const fetch = require('node-fetch');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
