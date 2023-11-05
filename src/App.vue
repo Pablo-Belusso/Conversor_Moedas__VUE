@@ -13,8 +13,8 @@
       </div>
 
       <div class="linha">
-        <Conversor moeda-a="USD" moeda-b="BRL"/>
-        <Conversor moeda-a="BRL" moeda-b="USD"/>
+        <Conversor moeda-a="EUR" moeda-b="BRL"/>
+        <Conversor moeda-a="BRL" moeda-b="EUR"/>
       </div>
 
   </div>
