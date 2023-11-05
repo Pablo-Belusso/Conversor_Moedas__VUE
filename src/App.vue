@@ -1,15 +1,15 @@
 <template>
   <!-- eslint-disable vue/multi-word-component-names -->
   <div id="app">
-    
+
       <div class="linha">
         <Conversor moeda-a="USD" moeda-b="BRL"/>
         <Conversor moeda-a="BRL" moeda-b="USD"/>
       </div>
 
       <div class="linha">
-        <Conversor moeda-a="USD" moeda-b="BRL"/>
-        <Conversor moeda-a="BRL" moeda-b="USD"/>
+        <Conversor moeda-a="CAD" moeda-b="BRL"/>
+        <Conversor moeda-a="BRL" moeda-b="CAD"/>
       </div>
 
       <div class="linha">
