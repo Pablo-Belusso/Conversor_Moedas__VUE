@@ -1,8 +1,10 @@
 <template>
   <!-- eslint-disable vue/multi-word-component-names -->
   <div id="app">
-   <Conversor moeda-a="USD" moeda-b="BRL"/>
-   <Conversor moeda-a="BRL" moeda-b="USD"/>
+    <div class="linha">
+      <Conversor moeda-a="USD" moeda-b="BRL"/>
+      <Conversor moeda-a="BRL" moeda-b="USD"/>
+    </div>
   </div>
   <!-- eslint-enable vue/multi-word-component-names -->
 </template>
