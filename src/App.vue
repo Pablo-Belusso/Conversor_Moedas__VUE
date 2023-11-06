@@ -46,6 +46,7 @@
 }
 
 .linha{
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
 }
