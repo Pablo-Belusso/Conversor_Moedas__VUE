@@ -35,6 +35,7 @@
 
 <style>
 #app {
+  margin: auto;
   max-width: 900px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
