@@ -42,4 +42,8 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.linha{
+  display: flex;
+}
 </style>
