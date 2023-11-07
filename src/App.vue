@@ -52,4 +52,8 @@
   display: flex;
   justify-content: space-around;
 }
+
+.text-center{
+  text-align: center;
+}
 </style>
