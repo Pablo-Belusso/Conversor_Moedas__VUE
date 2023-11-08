@@ -23,7 +23,7 @@ export default {
   methods: {
     converter() {
       let de_para = this.moedaA + "_" + this.moedaB;
-      let apiKey = 'SUA_CHAVE_DE_API_DA_RAPIDAPI'; // Substitua pela sua chave de API da RapidAPI
+      let apiKey = 'c256d597d8msh32427e3259e9711p18002fjsnc980a9ea78a4I'; // Substitua pela sua chave de API da RapidAPI
 
       // Faça a solicitação à API de câmbio por meio do servidor de proxy da RapidAPI
       axios
