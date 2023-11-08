@@ -23,15 +23,18 @@ export default {
   methods: {
     converter() {
       let de_para = this.moedaA + "_" + this.moedaB;
-      
+      let apiKey = 'SUA_CHAVE_DE_API_DA_RAPIDAPI'; // Substitua pela sua chave de API da RapidAPI
 
-      // Faça a solicitação à API do Open Exchange Rates por meio do servidor de proxy
+      // Faça a solicitação à API de câmbio por meio do servidor de proxy da RapidAPI
       axios
-        .get(`http://localhost:8081/https://open.er-api.com/v6/latest/${de_para}.json?app_id=e984274a5030437189708b5d26ecf3cc`)
+        .get(`https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=${this.moedaA}&to=${this.moedaB}`, {
+          headers: {
+            'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com',
+            'X-RapidAPI-Key': apiKey
+          }
+        })
         .then(response => {
-          const data = response.data;
-          const rate = data.rates[this.moedaB];
-          this.moedaB_value = (rate * parseFloat(this.moedaA_value)).toFixed(2);
+          this.moedaB_value = (response.data * parseFloat(this.moedaA_value)).toFixed(2);
         })
         .catch(error => {
           console.error(error);
