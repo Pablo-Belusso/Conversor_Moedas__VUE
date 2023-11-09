@@ -21,27 +21,34 @@ export default {
     };
   },
   methods: {
-    converter() {
-      let de_para = this.moedaA + "_" + this.moedaB;
-      let apiKey = 'c256d597d8msh32427e3259e9711p18002fjsnc980a9ea78a4I'; // Substitua pela sua chave de API da RapidAPI
+    async converter() {
+      
 
-      // Faça a solicitação à API de câmbio por meio do servidor de proxy da RapidAPI
-      axios
-        .get(`https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=${this.moedaA}&to=${this.moedaB}`, {
-          headers: {
-            'X-RapidAPI-Host': 'taxa-cambio.p.rapidapi.com',
-            'X-RapidAPI-Key': apiKey
-          }
-        })
-        .then(response => {
-          this.moedaB_value = (response.data * parseFloat(this.moedaA_value)).toFixed(2);
-        })
-        .catch(error => {
-          console.error(error);
-        });
+      const options = {
+        method: 'GET',
+        url: `https://exchange-rate-api1.p.rapidapi.com/convert`,
+
+        params: {
+          base: 'USD',
+          target: 'JPY'
+        },
+
+        headers: {
+          'X-RapidAPI-Key': 'c256d597d8msh32427e3259e9711p18002fjsnc980a9ea78a4', // Substitua pela sua chave de API da RapidAPI
+          'X-RapidAPI-Host': 'exchange-rate-api1.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await axios.request(options);
+        this.moedaB_value = (response.data.valor * parseFloat(this.moedaA_value)).toFixed(2);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 };
+
 </script>
 
 
