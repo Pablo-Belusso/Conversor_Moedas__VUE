@@ -29,7 +29,7 @@ export default {
       axios
         .get(`https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=${this.moedaA}&to=${this.moedaB}`, {
           headers: {
-            'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com',
+            'X-RapidAPI-Host': 'taxa-cambio.p.rapidapi.com',
             'X-RapidAPI-Key': apiKey
           }
         })
